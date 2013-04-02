@@ -38,7 +38,7 @@ namespace Jack
 
     #define MAX_SIZE 64
 
-    PRE_PACKED_STRUCTURE
+    /* Note: This class must be kept 32/64 clean! */
     struct JackFilter
     {
 
@@ -66,9 +66,9 @@ namespace Jack
             return mean / MAX_SIZE;
         }
 
-    } POST_PACKED_STRUCTURE;
+    };
 
-    PRE_PACKED_STRUCTURE
+    /* Note: This class must be kept 32/64 clean! */
     class JackDelayLockedLoop
     {
 
@@ -149,9 +149,9 @@ namespace Jack
                 return fCurrentWakeup;
             }
 
-    } POST_PACKED_STRUCTURE;
+    };
 
-    PRE_PACKED_STRUCTURE
+    /* Note: This class must be kept 32/64 clean! */
     class JackAtomicDelayLockedLoop : public JackAtomicState<JackDelayLockedLoop>
     {
          public:
@@ -215,7 +215,7 @@ namespace Jack
 
                 return res;
             }
-    } POST_PACKED_STRUCTURE;
+    };
 
 #endif
 
